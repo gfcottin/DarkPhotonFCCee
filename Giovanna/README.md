@@ -1,37 +1,10 @@
 # Repository for HNL Studies at FCC-ee in the U1BL Model 
 
-This repository contains the work developed by **gfcottin** for Heavy Neutral Lepton (HNL) studies at FCC-ee within the $$U(1)_{B-L}$$ model framework.
-
-Main contributions include:
-
-* Proposal and idea of this project
-* Identification of unexplored regions in the low-m_Z' model parameter space
-* Selection of relevant benchmarks for the DELPHES study
-* Proposal of the strategy for displaced vertex searches
-* Computation of all relevant theoretical observables:
-
-  * Production cross-sections
-  * Decay widths and branching ratios
-  * Kinematic distributions for displaced HNL events
-  * Theoretical decay probabilities inside the IDEA detector geometry
-
+This repository contains some example files to extract cross-section and decay information, get the master kinematics from pythia, and compute the probability of decay inside a detector. These are just example files, please fix according to your model and detector parameters.
 ---
 
 # Repository Structure
 
-## `gen_scripts/`
-
-Contains scripts for event generation in **MadGraph5 (MG5)**:
-
-* Coupled mass scans with and without ISR effects
-* Individual benchmark generation for fixed $m_{Z'}$ values
-
-The fixed benchmark generation was performed in two major production campaigns:
-
-1. Initial scan to identify the parameter space with ISR sensitivity
-2. Refined scan for smooth contour extraction
-
-runs with
 
 ```bash
 python3 generate_HNL_grid_XXX.py
@@ -71,19 +44,6 @@ source run_XXX.sh
 
 ---
 
-## `master_csv/`
-
-Contains scripts that extract and combine relevant information from:
-
-* MG5 LHE banner files
-* Pythia 8 outputs
-
-All python files run with
-
-```bash
-python3 get_XXX.py
-```
----
 
 ### `get_Master_cross_section_decay_fixed_mZp.py`
 
@@ -124,24 +84,6 @@ Outputs:
 
 ```bash
 Master_cross_section_coupled_isr.csv
-```
-
----
-
-### `get_Master_decay_coupled_isr.py`
-
-Extracts from MG5 banner files for the coupled mass scenario:
-
-* HNL total decay width
-* $Z'$ total decay width
-* Branching ratio:
-
-  $Z' \to NN$
-
-Outputs:
-
-```bash
-decay_data_coupled_isr2.csv
 ```
 
 ---
@@ -348,21 +290,3 @@ where:
 
 Same computation as above but using the projected (z)-direction decay probability (decay_Probability_IDEA_z). This is the one we show.
 
----
-
-## `plot_scripts/`
-
-Contains scripts used to visualize and study the physics behavior of the model:
-
-* Cross-sections with and without ISR
-* Branching ratios
-* Proper decay lengths ($$c\tau$$)
-* Average decay probabilities
-* Expected number of signal events
-* Benchmark grids in the mass-mixing plane
-
-The final publication-quality figures are generated using:
-
-```bash
-plots_paper.py
-```
