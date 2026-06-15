@@ -12,16 +12,6 @@ python3 generate_HNL_grid_XXX.py
 
 Note the ```MG5_gen_U1BL_mu_FCCee``` folder as well as all output folders for lhe events and cross-sections must be created beforehand.
 
----
-
-## `MG5_cards/`
-
-Contains all MadGraph and model-related cards:
-
-* UFO model implementation developed in:
-  https://arxiv.org/abs/1908.09838
-* Parameter card with automatic decay handling
-* MadSpin cards for event generation and decays
 
 ---
 
